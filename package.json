@@ -1,0 +1,50 @@
+{
+  "devDependencies": {
+    "browser-sync": "^0.9.1",
+    "browserify": "^4.2.3",
+    "exorcist": "^0.1.6",
+    "glob-whatev": "^0.1.8",
+    "gulp": "^3.6.0",
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-cache": "^0.1.11",
+    "gulp-csso": "^0.2.6",
+    "gulp-flatten": "0.0.2",
+    "gulp-grep": "^0.1.6",
+    "gulp-grep-stream": "0.0.2",
+    "gulp-if": "^1.2.1",
+    "gulp-ignore": "^1.1.0",
+    "gulp-imagemin": "^0.6.2",
+    "gulp-jade": "^0.6.1",
+    "gulp-jshint": "^1.5.3",
+    "gulp-load-plugins": "^0.5.3",
+    "gulp-minify-html": "^0.1.7",
+    "gulp-rename": "^1.2.0",
+    "gulp-replace": "^0.4.0",
+    "gulp-rimraf": "^0.1.0",
+    "gulp-ruby-sass": "^0.5.0",
+    "gulp-size": "^0.4.1",
+    "gulp-uglify": "^0.3.2",
+    "gulp-uncss": "^0.4.5",
+    "gulp-useref": "^0.4.5",
+    "gulp-util": "^2.2.20",
+    "gulp.spritesmith": "^1.5.0",
+    "jshint-stylish": "^0.2.0",
+    "mold-source-map": "^0.3.0",
+    "node-dir": "^0.1.5",
+    "opn": "^0.1.2",
+    "psi": "0.0.3",
+    "rimraf": "^2.2.8",
+    "run-sequence": "^0.3.7",
+    "streamqueue": "^0.1.2",
+    "vinyl-source-stream": "^0.1.1",
+    "watchify": "^0.10.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "del": "^0.1.1",
+    "eventemitter3": "0.1.6",
+    "phantomas": "^1.5.0"
+  }
+}
