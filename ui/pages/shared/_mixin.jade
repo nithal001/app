@@ -1,0 +1,26 @@
+//- All html mixins
+
+//- Image mixin
+mixin img(obj)
+  -if(obj && obj.src){
+    img(src=obj.src, alt=obj.alt, title=obj.alt, width=obj.width, height=obj.height, class=obj.class)
+  -}else{
+    img(src=obj[0], alt=obj[1], title=obj[1], width=obj[2], height=obj[3], class=obj[4])
+  -}
+  //- img(src=obj.src, alt=obj.alt, title=obj.alt, width=obj.width, height=obj.height, class=obj.class)
+
+//- loader
+mixin loader()
+  .loader
+    +img(["images/loader.gif", "Loading"])
+
+//- Tab mixin
+mixin tab(obj, current)
+  .legoTabs
+    each val, index in obj
+      -if(index == current){
+        a(href="#", class="active")=val
+      -}else{
+        a(href="#")=val
+      -}
+
