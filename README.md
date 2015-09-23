@@ -1,10 +1,10 @@
-# Flip Media front end starter template.
+#Media front end starter template.
 
-> Flip Media generic boilerplate for UI project.
+>Media generic boilerplate for UI project.
 
 ## Overview
 
-Flip html boilerplate, created with gulp, jade, scss and browserify. Extended from google web starter.
+Html boilerplate, created with gulp, jade, scss and browserify. Extended from google web starter.
 
 ## Features
 
