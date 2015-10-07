@@ -1,0 +1,78 @@
+body{
+
+}
+
+html, body{
+  font-family: sans-serif;
+}
+
+.shr{
+  -webkit-text-size-adjust: none;
+  font-size: 1em;
+
+  a {
+    color: $linkcolor;
+  }
+
+  a:active,
+  a:hover {
+    color: $linkhover;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $fsb;
+    margin: 0;
+  }
+
+  img {
+    max-width: 100%;
+    width: auto;
+  }
+
+}
+
+/*Lego style start here*/
+
+/*Lego style ends here*/
+
+/* Form elements starts here  */
+
+/* Form elements ends here  */
+
+/*Header start here*/
+
+/*Header ends here*/
+
+/*Footer start here*/
+  .shr.siteFooter{
+
+    .nav-social{
+      li{
+        float: left;
+        a{
+          text-indent: -9999px;
+          display: block;
+        }
+      }
+    }
+
+    .footer-menu{
+      li{
+        float: left;
+      }
+    }
+  }
+/*Footer ends here*/
+

@@ -1,0 +1,105 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+/* Font specifications */
+@font-face {
+  font-family: 'fsl';
+  src: url("fonts/fs_me-light-webfont.eot");
+  src: url("fonts/fs_me-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/fs_me-light-webfont.woff2") format("woff2"), url("fonts/fs_me-light-webfont.woff") format("woff"), url("fonts/fs_me-light-webfont.ttf") format("truetype"), url("fonts/fs_me-light-webfont.svg#fs_melight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'fsr';
+  src: url("fonts/fs_me-regular-webfont.eot");
+  src: url("fonts/fs_me-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/fs_me-regular-webfont.woff2") format("woff2"), url("fonts/fs_me-regular-webfont.woff") format("woff"), url("fonts/fs_me-regular-webfont.ttf") format("truetype"), url("fonts/fs_me-regular-webfont.svg#fs_meregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'fsb';
+  src: url("fonts/fs_me-bold-webfont.eot");
+  src: url("fonts/fs_me-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/fs_me-bold-webfont.woff2") format("woff2"), url("fonts/fs_me-bold-webfont.woff") format("woff"), url("fonts/fs_me-bold-webfont.ttf") format("truetype"), url("fonts/fs_me-bold-webfont.svg#fs_mebold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* @mixin disable-prefix-for-all() {
+  $prefix-for-webkit:    false !global;
+  $prefix-for-mozilla:   false !global;
+  $prefix-for-microsoft: false !global;
+  $prefix-for-opera:     false !global;
+  $prefix-for-spec:      false !global;
+}
+ */
+html, body {
+  font-family: sans-serif;
+}
+
+.shr {
+  -webkit-text-size-adjust: none;
+  font-size: 1em;
+}
+.shr a {
+  color: #d55c19;
+}
+.shr a:active,
+.shr a:hover {
+  color: #4c3327;
+  text-decoration: none;
+}
+.shr ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.shr h1,
+.shr h2,
+.shr h3,
+.shr h4,
+.shr h5,
+.shr h6 {
+  font-family: "fsb", sans-serif;
+  margin: 0;
+}
+.shr img {
+  max-width: 100%;
+  width: auto;
+}
+
+/*Lego style start here*/
+/*Lego style ends here*/
+/* Form elements starts here  */
+/* Form elements ends here  */
+/*Header start here*/
+/*Header ends here*/
+/*Footer start here*/
+.shr.siteFooter .nav-social li {
+  float: left;
+}
+.shr.siteFooter .nav-social li a {
+  text-indent: -9999px;
+  display: block;
+}
+.shr.siteFooter .footer-menu li {
+  float: left;
+}
+
+/*Footer ends here*/

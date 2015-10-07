@@ -1,0 +1,190 @@
+// Color definitions
+$linkcolor : #d55c19;
+$linkhover : #4c3327;
+
+$em-base : 18;
+$fsl: 'fsl', sans-serif;
+$fsr: 'fsr', sans-serif;
+$fsb: 'fsb', sans-serif;
+
+// Variable settings for /addons/prefixer.scss
+$prefix-for-webkit:    true !default;
+$prefix-for-mozilla:   true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera:     true !default;
+$prefix-for-spec:      true !default; // required for keyframe mixin
+/* Font specifications */
+@font-face {
+    font-family: 'fsl';
+    src: url('fonts/fs_me-light-webfont.eot');
+    src: url('fonts/fs_me-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/fs_me-light-webfont.woff2') format('woff2'),
+         url('fonts/fs_me-light-webfont.woff') format('woff'),
+         url('fonts/fs_me-light-webfont.ttf') format('truetype'),
+         url('fonts/fs_me-light-webfont.svg#fs_melight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fsr';
+    src: url('fonts/fs_me-regular-webfont.eot');
+    src: url('fonts/fs_me-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/fs_me-regular-webfont.woff2') format('woff2'),
+         url('fonts/fs_me-regular-webfont.woff') format('woff'),
+         url('fonts/fs_me-regular-webfont.ttf') format('truetype'),
+         url('fonts/fs_me-regular-webfont.svg#fs_meregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fsb';
+    src: url('fonts/fs_me-bold-webfont.eot');
+    src: url('fonts/fs_me-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/fs_me-bold-webfont.woff2') format('woff2'),
+         url('fonts/fs_me-bold-webfont.woff') format('woff'),
+         url('fonts/fs_me-bold-webfont.ttf') format('truetype'),
+         url('fonts/fs_me-bold-webfont.svg#fs_mebold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Functions
+
+//************************************************************************//
+// Example: @include prefixer(border-radius, $radii, webkit ms spec);
+//************************************************************************//
+// Variables located in /settings/_prefixer.scss
+
+@mixin prefixer ($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    @if $prefix == webkit {
+      @if $prefix-for-webkit {
+        -webkit-#{$property}: $value;
+      }
+    }
+    @else if $prefix == moz {
+      @if $prefix-for-mozilla {
+        -moz-#{$property}: $value;
+      }
+    }
+    @else if $prefix == ms {
+      @if $prefix-for-microsoft {
+        -ms-#{$property}: $value;
+      }
+    }
+    @else if $prefix == o {
+      @if $prefix-for-opera {
+        -o-#{$property}: $value;
+      }
+    }
+    @else if $prefix == spec {
+      @if $prefix-for-spec {
+        #{$property}: $value;
+      }
+    }
+    @else  {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+/* @mixin disable-prefix-for-all() {
+  $prefix-for-webkit:    false !global;
+  $prefix-for-mozilla:   false !global;
+  $prefix-for-microsoft: false !global;
+  $prefix-for-opera:     false !global;
+  $prefix-for-spec:      false !global;
+}
+ */
+// Convert pixels to ems
+// eg. for a relational value of 12px write em(12) when the parent is 16px
+// if the parent is another value say 24px write em(12, 24)
+
+@function em($pxval, $base: $em-base) {
+  @if not unitless($pxval) {
+      $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+      $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1em;
+}
+
+//Mixins
+// Appearance
+@mixin appearance ($value) {
+  @include prefixer(appearance, $value, webkit moz ms o spec);
+}
+// Custom select
+@mixin select ($value) {
+
+}
+
+// Placeholders
+//Readmore
+%readmore{
+  font-size: em(16);
+  text-transform: uppercase;
+  font-family:$fsb;
+}
+//Clearfix
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+// Arrow
+@mixin arrow($direction: top, $size: 10px, $color: #ccc, $center: 50%, $margin: -1px, $pseudo: before, $pos: relative){
+    position: $pos;
+    border-color: $color;
+
+    &:#{$pseudo} {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        border-color: $color;
+
+        @if $direction == "right" {
+            top: $center;
+            left: 100%;
+            margin-left: $margin;
+            margin-top: $size * -1;
+            border-top: $size solid transparent;
+            border-bottom: $size solid transparent;
+            border-left: $size solid $color;
+            border-left-color: inherit;
+        } @else if $direction == "down" {
+            top: 100%;
+            left: $center;
+            margin-top: $margin;
+            margin-left: $size * -1;
+            border-left: $size solid transparent;
+            border-right: $size solid transparent;
+            border-top: $size solid $color;
+            border-top-color: inherit;
+        } @else if $direction == "left" {
+            top: $center;
+            right: 100%;
+            margin-right: $margin;
+            margin-top: $size * -1;
+            border-top: $size solid transparent;
+            border-bottom: $size solid transparent;
+            border-right:$size solid $color;
+            border-right-color: inherit;
+        } @else {
+            bottom: 100%;
+            left: $center;
+            margin-bottom: $margin;
+            margin-left: $size * -1;
+            border-left: $size solid transparent;
+            border-right: $size solid transparent;
+            border-bottom: $size solid $color;
+            border-bottom-color: inherit;
+        }
+    }
+}
